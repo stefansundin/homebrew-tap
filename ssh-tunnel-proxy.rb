@@ -1,9 +1,9 @@
 class SshTunnelProxy < Formula
   desc "Open SSH tunnels on-demand."
   homepage "https://github.com/stefansundin/ssh-tunnel-proxy"
-  version "0.0.1"
+  version "0.0.2"
   url "https://github.com/stefansundin/ssh-tunnel-proxy/archive/v#{version}.tar.gz"
-  sha256 "f8e4e7fdaed48b78c154113f849c1a5e9c7492522717c58d8190001c75bff0c1"
+  sha256 "028cea7f4fb636906ff77958f96c2f9f3bfc51652c3271f657ce5fa8569d5711"
   plist_options manual: "ssh-tunnel-proxy"
 
   def install
@@ -25,20 +25,21 @@ class SshTunnelProxy < Formula
     BUNDLE_GEMFILE=#{libexec}/Gemfile bundle install
 
     Notes for using the service:
-    - It assumes you are using rbenv. If you are not, you have to edit the plist.
+    - It assumes you are using rbenv. If you are not, you have to edit #{bin}/ssh-tunnel-proxy
     - Logs are saved to: #{var}/log/ssh-tunnel-proxy/
 
     Config is loaded from ~/.ssh-tunnel-proxy.toml
     Example config:
 
     [[tunnel]]
+    user = "my_username"
+    host = "dev1.example.com"
+    proxy_jump = "my_username@bastion.example.com"
+    [[tunnel.forward]]
     local_interface = "localhost" # This tunnel only accepts connections from your own computer
     local_port = 8881
     remote_host = "localhost"
     remote_port = 8880
-    user = "my_username"
-    host = "dev1.example.com"
-    proxy_jump = "my_username@bastion.example.com"
     EOF
   end
 
