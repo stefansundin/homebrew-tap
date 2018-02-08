@@ -1,9 +1,9 @@
 class SshTunnelProxy < Formula
   desc "Open SSH tunnels on-demand."
   homepage "https://github.com/stefansundin/ssh-tunnel-proxy"
-  version "0.0.2"
+  version "0.0.3"
   url "https://github.com/stefansundin/ssh-tunnel-proxy/archive/v#{version}.tar.gz"
-  sha256 "028cea7f4fb636906ff77958f96c2f9f3bfc51652c3271f657ce5fa8569d5711"
+  sha256 "a120250e7a297d4a1c99e574a23356b56ebe5b58a214cba65e44a4134268976a"
   plist_options manual: "ssh-tunnel-proxy"
 
   def install
@@ -31,6 +31,7 @@ class SshTunnelProxy < Formula
     Config is loaded from ~/.ssh-tunnel-proxy.toml
     Example config:
 
+    timeout = 300 # Time (in seconds) to keep tunnels with no connections open before closing them
     [[tunnel]]
     user = "my_username"
     host = "dev1.example.com"
@@ -40,6 +41,9 @@ class SshTunnelProxy < Formula
     local_port = 8881
     remote_host = "localhost"
     remote_port = 8880
+
+    For all the configuration options available, see:
+    https://github.com/stefansundin/ssh-tunnel-proxy/blob/master/ssh-tunnel-proxy.toml
     EOF
   end
 
