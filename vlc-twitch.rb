@@ -9,6 +9,8 @@ class VlcTwitch < Formula
   end
 
   def post_install
+    mkdir_p "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/playlist/"
+    mkdir_p "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/extensions/"
     ln_sf share/"vlc-twitch/twitch.lua", "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/playlist/twitch.lua"
     ln_sf share/"vlc-twitch/twitch-extension.lua", "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/extensions/twitch-extension.lua"
   end
