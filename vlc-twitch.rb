@@ -14,7 +14,7 @@ class VlcTwitch < Formula
   end
 
   def caveats
-    <<-EOS.unindent
+    <<~EOS
       This formula needs to create symlinks at the following locations:
       '#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/playlist/twitch.lua'
       '#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/extensions/twitch-extension.lua'
