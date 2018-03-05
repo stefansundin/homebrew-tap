@@ -1,9 +1,10 @@
 class SshTunnelProxy < Formula
   desc "Open SSH tunnels on-demand."
   homepage "https://github.com/stefansundin/ssh-tunnel-proxy"
-  version "0.0.3"
+  head "https://github.com/stefansundin/ssh-tunnel-proxy.git"
+  version "0.0.5"
   url "https://github.com/stefansundin/ssh-tunnel-proxy/archive/v#{version}.tar.gz"
-  sha256 "a120250e7a297d4a1c99e574a23356b56ebe5b58a214cba65e44a4134268976a"
+  sha256 "70da345f8a22ec5f364a521e97db739b5d3aa3b21de4f695c4a049a94cd0e4e6"
   plist_options manual: "ssh-tunnel-proxy"
 
   def install
