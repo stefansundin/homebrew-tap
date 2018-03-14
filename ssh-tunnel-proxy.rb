@@ -45,6 +45,9 @@ class SshTunnelProxy < Formula
 
     For all the configuration options available, see:
     https://github.com/stefansundin/ssh-tunnel-proxy/blob/master/ssh-tunnel-proxy.toml
+
+    You have to restart the service after changing the config:
+    brew services restart ssh-tunnel-proxy
     EOF
   end
 
