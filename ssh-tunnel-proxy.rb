@@ -70,6 +70,11 @@ class SshTunnelProxy < Formula
       <string>#{var}/log/ssh-tunnel-proxy/stdout.log</string>
       <key>StandardErrorPath</key>
       <string>#{var}/log/ssh-tunnel-proxy/stderr.log</string>
+      <key>SoftResourceLimits</key>
+      <dict>
+      <key>NumberOfFiles</key>
+        <integer>1024</integer>
+      </dict>
     </dict>
     </plist>
     EOF
