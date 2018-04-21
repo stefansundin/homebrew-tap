@@ -79,4 +79,8 @@ class SshTunnelProxy < Formula
     </plist>
     EOF
   end
+
+  # The easiest way to get the default NumberOfFiles is to actually run code inside of the service and print it to stdout:
+  # puts Process.getrlimit(Process::RLIMIT_NOFILE)
+  # => [256, 9223372036854775807]
 end
