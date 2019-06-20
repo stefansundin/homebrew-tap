@@ -24,11 +24,16 @@ class VlcTwitch < Formula
       But because of Homebrew's sandbox mode, it doesn't have permissions to do so.
       If you get an error about the post-install above, then please run this command:
 
-      brew postinstall --no-sandbox stefansundin/tap/vlc-twitch
+      HOMEBREW_NO_SANDBOX=1 brew postinstall stefansundin/tap/vlc-twitch
 
-      To avoid this when installing, use this command:
+      Or create the symlinks manually:
 
-      brew install --no-sandbox --HEAD stefansundin/tap/vlc-twitch
+      ln -sf "#{share}/vlc-twitch/twitch.lua" "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/playlist/twitch.lua"
+      ln -sf "#{share}/vlc-twitch/twitch-extension.lua" "#{ENV["HOME"]}/Library/Application Support/org.videolan.vlc/lua/extensions/twitch-extension.lua"
+
+      To avoid this issue when installing, use this command:
+
+      HOMEBREW_NO_SANDBOX=1 brew install --HEAD stefansundin/tap/vlc-twitch
 
       When you uninstall vlc-twitch, these symlinks are not automatically removed. It is ok to leave them, however.
     EOS
