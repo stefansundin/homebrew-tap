@@ -73,7 +73,7 @@ class SshTunnelProxy < Formula
       <key>SoftResourceLimits</key>
       <dict>
       <key>NumberOfFiles</key>
-        <integer>1024</integer>
+        <integer>4096</integer>
       </dict>
     </dict>
     </plist>
